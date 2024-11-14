@@ -9,24 +9,23 @@ if (t.getHours() >= 7 && localStorage.getItem('lastRefill') !== getDateOfYear(t)
   localStorage.setItem('lastRefill', getDateOfYear(t));
 }
 
+let a = document.querySelector("#coffee");
+let b = document.querySelector(".coffee-text");
+
 if (localStorage.getItem('coffee') !== "filled"){
-  let a = document.querySelector("#coffee");
-  let b = document.querySelector(".coffee-text");
-  a.src = a.src.replace('.png','-empty.png');
+  a.src = "cups/coffee-empty.png";
   b.innerText = "You drank today! Come back at 7 AM tomorrow.";
 }
 else {
-  let b = document.querySelector(".coffee-text");
+  a.src = "cups/coffee.png";
   b.innerText = "Your coffee is ready!";
 }
 
 function drinkCoffee() {
-  let a = document.querySelector("#coffee");
 
   if (a.src.includes("cups/coffee.png")){
-    a.src = a.src.replace('.png','-empty.png');
     localStorage.setItem('coffee', 'empty');
-    let b = document.querySelector(".coffee-text");
+    a.src = a.src.replace('.png','-empty.png');
     b.innerText = "You drank today! Come back at 7 AM tomorrow.";
   }
 }
