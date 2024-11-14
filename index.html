@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Coffee ☕</title>
+</head>
+<style>
+  body {
+    background-color: rgb(105, 105, 105);
+  }
+  .coffee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+</style>
+<body>
+  <div class="coffee">
+    <img src="cups/coffee.png" alt="coffee" onclick="drinkCoffee()" id="coffee"/>
+  </div>
+</body>
+<script>
+  // localStorage.clear();
+  let t = new Date();
+
+  if (t.getHours() >= 7 && localStorage.getItem('drankCoffee') !== "true"){
+    localStorage.setItem('drankCoffee', 'false');
+    localStorage.setItem('coffee', 'filled');
+  }
+  else if (localStorage.getItem('drankCoffee') === "true"){
+    localStorage.setItem('coffee', 'empty');
+  }
+  else {
+    localStorage.setItem('coffee', 'filled');
+  }
+
+  if (localStorage.getItem('coffee') !== "filled"){
+    let a = document.querySelector("#coffee");
+    a.src = a.src.replace('.png','-empty.png');
+  }
+
+  function drinkCoffee() {
+    let a = document.querySelector("#coffee");
+
+    if (a.src.includes("cups/coffee.png")){
+      a.src = a.src.replace('.png','-empty.png');
+      localStorage.setItem('drankCoffee', 'true');
+      localStorage.setItem('coffee', 'filled');
+    }
+
+    // else {
+    //   a.src = a.src.replace('-empty.png','.png');
+    // }
+  }
+</script>
+</html>
