@@ -4,49 +4,10 @@
   <meta charset="UTF-8">
   <title>Daily Coffee</title>
   <link rel="icon" type="image/x-icon" href="/cups/favicon.ico">
+  <link rel="stylesheet" href="coffee-layout.css">
 </head>
-<style>
-  body {
-    background-color: rgb(105, 105, 105);
-    font-family: Consolas, Helvetica, sans-serif;
-  }
-  .coffee {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-  img {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .coffee-credit {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    a{
-      position: fixed;
-      bottom: 10px;
-      color: rgb(145, 145, 145);
-      text-decoration: none;
-    }
-  }
-
-  .coffee-text {
-    text-align: center;
-    color: rgb(185, 185, 185);
-    font-size: 3em;
-    font-weight: bold;
-    top: 4em;
-  }
-</style>
 <body>
-  <div class="coffee-text">Your coffee is ready!</div>
+  <div class="coffee-text"></div>
   <div class="coffee">
     <img src="cups/coffee.png" alt="coffee" onclick="drinkCoffee()" id="coffee"/>
   </div>

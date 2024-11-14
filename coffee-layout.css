@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(105, 105, 105);
+  font-family: Consolas, Helvetica, sans-serif;
+}
+.coffee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.coffee-credit {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a{
+    position: fixed;
+    bottom: 10px;
+    color: rgb(145, 145, 145);
+    text-decoration: none;
+  }
+}
+
+.coffee-text {
+  text-align: center;
+  color: rgb(185, 185, 185);
+  font-size: 3em;
+  font-weight: bold;
+  top: 4em;
+}

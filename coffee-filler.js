@@ -15,6 +15,10 @@ if (localStorage.getItem('coffee') !== "filled"){
   a.src = a.src.replace('.png','-empty.png');
   b.innerText = "You drank today! Come back at 7 AM tomorrow.";
 }
+else {
+  let b = document.querySelector(".coffee-text");
+  b.innerText = "Your coffee is ready!";
+}
 
 function drinkCoffee() {
   let a = document.querySelector("#coffee");
