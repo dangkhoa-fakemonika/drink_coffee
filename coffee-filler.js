@@ -14,11 +14,23 @@ let b = document.querySelector(".coffee-text");
 
 if (localStorage.getItem('coffee') !== "filled"){
   a.src = "cups/coffee-empty.png";
-  b.innerText = "You drank today! Come back at 7 AM tomorrow.";
+  if (t.getHours() >= 7){
+    b.innerText = "You drank today! Come back at 7 AM tomorrow.";
+  }
+  else{
+    b.innerText = "Yours aren't ready yet! Wait till 7 AM."
+  }
+
 }
 else {
   a.src = "cups/coffee.png";
-  b.innerText = "Your coffee is ready!";
+  if (t.getHours() >= 7 && t.getHours() <= 21){
+    b.innerText = "Your coffee is ready!";
+  }
+  else {
+    b.innerText = "This one is quite stale...";
+  }
+
 }
 
 function drinkCoffee() {
