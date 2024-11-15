@@ -16,6 +16,7 @@ I make this with the intention of adding a new feature, whether big or small, to
 
 ### Feature ☕
 + Added flavor texts for coffee ☕ states (refilled, after drinking, soon to be filled, leaving it un-drank).
++ Added README.md for this. I want to share my thoughts somewhere.
 + New features coming soon.
 
 ## 3. Licenses ☕
