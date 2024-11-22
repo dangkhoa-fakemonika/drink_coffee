@@ -1,6 +1,7 @@
 :root{
   --coffee-color: #8A4B38;
   --coffee-progression: 0;
+  --day-progression: 1;
 }
 
 body {
@@ -54,7 +55,7 @@ body {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: var(--day-progression);
   }
 }
 
@@ -116,7 +117,7 @@ img {
 }
 
 .fill-cup {
-  animation: fill-cup 7s linear 2s 1 forwards;
+  animation: fill-cup 5s linear 1s 1 forwards;
 }
 
 .coffee-state {
@@ -127,11 +128,11 @@ img {
 }
 
 .smoke-state{
-  opacity: var(--coffee-progression) !important;
+  opacity: calc(var(--coffee-progression) * var(--day-progression)) !important;
 }
 
 .filler{
-  animation: filling 1s linear 1s 1 forwards, done 1s linear 7.8s 1 forwards;
+  animation: filling 0.2s linear 1s 1 forwards, done 0.2s linear 6s 1 forwards;
 }
 
 .fading {
