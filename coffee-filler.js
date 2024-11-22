@@ -1,43 +1,38 @@
 let t = new Date();
+localStorage.removeItem('coffee') // remove old keys
+// localStorage.clear()
 
 function getDateOfYear(d){
   return d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
 }
 
+let coffee_fill = document.querySelector(".oval");
+let coffee_filler = document.querySelector(".coffee-filler")
+let coffee_text = document.querySelector(".coffee-text");
+let coffee_smoke = document.querySelector("#coffee-smoke");
+var r = document.querySelector(':root');
+
+// Refilling coffee
 if (t.getHours() >= 7 && localStorage.getItem('lastRefill') !== getDateOfYear(t)) {
-  localStorage.setItem('coffee', 'filled');
   localStorage.setItem('lastRefill', getDateOfYear(t));
+  coffee_fill.classList.add('fill-cup');
+  coffee_filler.classList.add('filler');
+  coffee_smoke.classList.add('fading');
+  localStorage.setItem('coffee-state', '1');
+} else {
+  coffee_fill.classList.add('coffee-state');
+  coffee_smoke.classList.add('smoke-state');
 }
 
-let a = document.querySelector("#coffee");
-let b = document.querySelector(".coffee-text");
+let fill_percent = Math.min(Math.max(parseFloat(localStorage.getItem('coffee-state')), 0), 1);
+console.log(fill_percent)
 
-if (localStorage.getItem('coffee') !== "filled"){
-  a.src = "cups/coffee-empty.png";
-  if (t.getHours() >= 7){
-    b.innerText = "You drank today! Come back at 7 AM tomorrow.";
-  }
-  else{
-    b.innerText = "Yours aren't ready yet! Wait till 7 AM."
-  }
+r.style.setProperty('--coffee-progression', fill_percent.toString());
 
-}
-else {
-  a.src = "cups/coffee.png";
-  if (t.getHours() >= 7 && t.getHours() <= 21){
-    b.innerText = "Your coffee is ready!";
-  }
-  else {
-    b.innerText = "This one is quite stale...";
-  }
-
+function drinkCoffee(){
+  fill_percent -= 0.1;
+  r.style.setProperty('--coffee-progression', fill_percent.toString());
+  localStorage.setItem('coffee-state', fill_percent.toString());
 }
 
-function drinkCoffee() {
 
-  if (a.src.includes("cups/coffee.png")){
-    localStorage.setItem('coffee', 'empty');
-    a.src = a.src.replace('.png','-empty.png');
-    b.innerText = "You drank today! Come back at 7 AM tomorrow.";
-  }
-}

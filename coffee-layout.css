@@ -1,3 +1,8 @@
+:root{
+  --coffee-color: #8A4B38;
+  --coffee-progression: 0;
+}
+
 body {
   background-color: rgb(105, 105, 105);
   font-family: Consolas, Helvetica, sans-serif;
@@ -8,6 +13,79 @@ body {
   justify-content: center;
   box-sizing: border-box;
 }
+
+@keyframes fill-cup {
+  from {
+    top: 358px;
+    left: 211px;
+    height: 50px;
+    width: 107px;
+  }
+  to {
+    top: 85px;
+    left: 42px;
+    height: 200px;
+    width: 428px;
+  }
+}
+
+@keyframes filling {
+  from {
+    height: 0;
+  }
+  to {
+    height: 110%;
+  }
+}
+
+@keyframes done {
+  from {
+    height: 110%;
+    top: 0;
+  }
+  to {
+    height: 0;
+    top: 50%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#coffee-smoke {
+  opacity: 0;
+}
+
+.coffee-filler{
+  left: 50%;
+  top: 0;
+  width: 32px;
+  background-color: var(--coffee-color);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.oval-container {
+  top: 50%;
+  left: 50%;
+  width: 512px;
+  height: 512px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.oval {
+  background-color: var(--coffee-color);
+  border-radius: 50%;
+  position: relative;
+}
+
 img {
   top: 50%;
   left: 50%;
@@ -36,3 +114,28 @@ img {
   font-weight: bold;
   top: 4em;
 }
+
+.fill-cup {
+  animation: fill-cup 7s linear 2s 1 forwards;
+}
+
+.coffee-state {
+  top: calc(358px - var(--coffee-progression)*273px);
+  left: calc(211px - var(--coffee-progression)* 169px);
+  height: calc(50px + var(--coffee-progression)* 150px);
+  width: calc(107px + var(--coffee-progression)* 321px);
+}
+
+.smoke-state{
+  opacity: var(--coffee-progression) !important;
+}
+
+.filler{
+  animation: filling 1s linear 1s 1 forwards, done 1s linear 7.8s 1 forwards;
+}
+
+.fading {
+  animation: fade-in 5s linear 5s forwards;
+}
+
+
