@@ -55,7 +55,7 @@ body {
     opacity: 0;
   }
   to {
-    opacity: var(--day-progression);
+    opacity: 1;
   }
 }
 

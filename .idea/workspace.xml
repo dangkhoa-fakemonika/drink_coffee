@@ -7,6 +7,8 @@
     <list default="true" id="455d1bfa-d2c4-4fa3-b450-c274c24a410a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coffee-filler.js" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-filler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coffee-layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/coffee-layout.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +85,9 @@
       <workItem from="1731716453978" duration="103000" />
       <workItem from="1732273765143" duration="16797000" />
       <workItem from="1732293526634" duration="605000" />
+      <workItem from="1732322017265" duration="100000" />
+      <workItem from="1732324002689" duration="5256000" />
+      <workItem from="1732331177502" duration="2607000" />
     </task>
     <servers />
   </component>
