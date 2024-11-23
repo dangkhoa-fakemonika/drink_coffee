@@ -34,6 +34,8 @@ You can take some sips and come back for another time. No one will take your cof
   + The coffee☕ can be drink in multiple sips.
   + MORE extra flavor texts is added, including: random drinking texts, progress and time based texts, and others.
   + The empty cups are now cleaned, because you are a tidy person.
+- **Nov 23, 2024**
+  + Patch a bug where coffee can't be fill at midnight (my condolences for those who needed it).
 
 + More features coming soon.
 
