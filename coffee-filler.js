@@ -24,7 +24,8 @@ var time_dif;
 // console.log(last_refill_time)
 
 flavor_texts = {
-  "prompt_filling" : "Preparing your drink...",
+  // "prompt_filling" : "Preparing your drink...",
+  "prompt_filling" : "Hot chocolate incoming...",
   "prompt_done" : "Your drink is ready! Enjoy!",
   "full_new" : "Drink it while it's hot!",
   "full_semi" : "It's warm now, but still good!",
@@ -42,10 +43,17 @@ flavor_texts = {
   "low_semi" : "Does the end taste bitter or...",
   "low_old" : "Uhm... saving the best for last...?",
   "low_bad" : "I suggest you wait for a new one soon...",
-  "empty_new" : "Hope you liked it! Come back tomorrow at 7 AM for more!",
-  "empty_semi" : "Only one per day, sorry. 7 AM tomorrow for another!",
-  "empty_old" : "We're not closed, but no additional coffee either. 7 AM please.",
-  "empty_bad" : "Not 7 AM yet! Come back soon!",
+  // "empty_new" : "Hope you liked it! Come back tomorrow at 7 AM for more!",
+  // "empty_semi" : "Only one per day, sorry. 7 AM tomorrow for another!",
+  // "empty_old" : "We're not closed, but no additional coffee either. 7 AM please.",
+  // "empty_bad" : "Not 7 AM yet! Come back soon!",
+
+  // Christmas version
+  "empty_new" : "Hope you liked it! This cookie is immortal by the way...",
+  "empty_semi" : "Only one per day, sorry. There's still the cookie!",
+  "empty_old" : "Cookie: still there, New hot choccy: 7 AM please.",
+  "empty_bad" : "New cup is coming soon...but is the cookie \"new\"?",
+
   "done_new" : "Hope you liked it! Come back tomorrow at 7 AM for more!",
   "done_semi" : "Not too bad isn't it? 7 AM tomorrow for more!",
   "done_old" : "Probably not the brightest cups...Get one new tomorrow",
@@ -62,11 +70,23 @@ flavor_texts = {
   "drink_bad_0" : "Does it even taste...normal?",
   "drink_bad_1" : "You don't have to...",
   "drink_bad_2" : "That doesn't feels good...",
-  "empty_quotes_0" : "You know, maybe I'd switch for tea on someday...",
-  "empty_quotes_1" : "Do you want some pastries next time? Or a croissant?",
-  "empty_quotes_2" : "Did you like the cup? I hope you did. I did!",
-  "empty_quotes_3" : "Maybe I'll try to have some latte art next time...",
-  "empty_quotes_4" : "I've always want to brew my own cup of coffee, although not like this..."
+  // "empty_quotes_0" : "You know, maybe I'd switch for tea on someday...",
+  // "empty_quotes_1" : "Do you want some pastries next time? Or a croissant?",
+  // "empty_quotes_2" : "Did you like the cup? I hope you did. I did!",
+  // "empty_quotes_3" : "Maybe I'll try to have some latte art next time...",
+  // "empty_quotes_4" : "I've always wanted to brew my own cup of coffee, although not like this...",
+
+  "empty_quotes_0" : "Even question why is this hot chocolate is the same as coffee?",
+  "empty_quotes_1" : "If you refresh the page, the cookie goes back!",
+  "empty_quotes_2" : "Marshmelloes emoji doesn't exist...bummer...",
+  "empty_quotes_3" : "The cookie is not haunted by the way, nor that it's real.",
+  "empty_quotes_4" : "This hot chocolate is sponsored by the coffee you drank last month!",
+
+  "cookie_0" : "ayo this is bussin",
+  "cookie_1" : "Ooo, fudgy",
+  "cookie_2" : "Fresh from the computer's oven!",
+  "cookie_3" : "Yummy",
+  "cookie_4" : "Wish these were real...",
 }
 
 r.style.setProperty('--coffee-progression', fill_percent.toString());
@@ -93,7 +113,7 @@ setTimeDif(last_refill_time, current_time);
 // console.log(current_hours >= 7 && last_refill_time.toDateString() !== current_time.toDateString());
 // console.log(time_dif >= 24);
 
-// Refilling coffee
+// Refilling coffee and renew cookie
 if ((localStorage.getItem('lastRefill') === null) || (current_hours >= 7 && last_refill_time.toDateString() !== current_time.toDateString()) || (time_dif >= 24)) {
   fillCoffee();
 } else {
@@ -190,3 +210,9 @@ function loadFlavorText(prompt){
   coffee_text.innerText = flavor_texts[prompt];
 }
 
+function eatCoffee(){
+  let cookie = document.getElementById("cookie");
+  cookie.style.setProperty("opacity", "0");
+  let randInt = Math.floor(Math.random() * 5);
+  loadFlavorText("cookie_" + randInt.toString());
+}

@@ -36,6 +36,8 @@ You can take some sips and come back for another time. No one will take your cof
   + The empty cups are now cleaned, because you are a tidy person.
 - **Nov 23, 2024**
   + Patch a bug where coffee can't be fill at midnight (my condolences for those who needed it).
+- **Dec 4, 2024**
+  + Christmas update, added an immortal cookie.
 
 + More features coming soon.
 

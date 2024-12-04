@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: rgb(105, 105, 105);
+  /*background-color: rgb(105, 105, 105);*/
+  background-color: seagreen;
   font-family: Consolas, Helvetica, sans-serif;
 }
 .coffee {
@@ -103,14 +104,16 @@ img {
   a{
     position: fixed;
     bottom: 10px;
-    color: rgb(145, 145, 145);
+    /*color: rgb(145, 145, 145);*/
+    color: darkslategrey;
     text-decoration: none;
   }
 }
 
 .coffee-text {
   text-align: center;
-  color: rgb(185, 185, 185);
+  /*color: rgb(185, 185, 185);*/
+  color: mediumseagreen;
   font-size: 3em;
   font-weight: bold;
   top: 4em;
@@ -137,6 +140,12 @@ img {
 
 .fading {
   animation: fade-in 5s linear 5s forwards;
+}
+
+#cookie{
+  margin-left: 100px;
+  margin-top: 150px;
+  scale: 75%;
 }
 
 
